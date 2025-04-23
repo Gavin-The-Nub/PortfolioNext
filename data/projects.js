@@ -24,7 +24,7 @@ export const businessProjects = [
     image: "/b2.png",
     gallery: ["/b2a.png", "/b2b.png", "/b2c.png"],
     technologies: ["Next.js", "Tailwind", "Shadcn", "GSAP"],
-    liveUrl: "https://repli-rho.vercel.app/",
+    liveUrl: "https://replipainting.com/",
 
     category: "business",
   },

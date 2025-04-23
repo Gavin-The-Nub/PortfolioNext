@@ -45,7 +45,7 @@ export default function Contact() {
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <Card>
           <CardHeader>
-            <CardTitle>Contact Information</CardTitle>
+            <CardTitle className="text-lg">Contact Information</CardTitle>
             <CardDescription>
               Here are the ways you can reach me
             </CardDescription>
@@ -79,7 +79,7 @@ export default function Contact() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Send a Message</CardTitle>
+            <CardTitle className="text-lg">Send a Message</CardTitle>
             <CardDescription>
               Fill out the form below and I'll get back to you as soon as
               possible
