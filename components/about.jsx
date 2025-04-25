@@ -53,7 +53,11 @@ export default function About() {
               </ul>
             </div>
           </div>
-          <Button variant="outline" className="gap-2">
+          <Button
+            variant="outline"
+            className="gap-2"
+            onClick={() => alert("Resume is not available at the moment.")}
+          >
             <FileText className="h-4 w-4" />
             Download Resume
           </Button>
