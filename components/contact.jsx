@@ -11,7 +11,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Mail, MapPin, Phone } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  CheckCircle,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,17 +27,51 @@ export default function Contact() {
     message: "",
   });
 
+  const [formStatus, setFormStatus] = useState({
+    message: "",
+    type: "", // "success" | "error"
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+    setFormStatus({ message: "", type: "" });
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setFormStatus({
+          message: "Thank you for your message! I'll get back to you soon.",
+          type: "success",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setFormStatus({
+          message: "Something went wrong. Please try again later.",
+          type: "error",
+        });
+      }
+    } catch (error) {
+      console.error("Email send error:", error);
+      setFormStatus({
+        message: "Failed to send message. Please try again.",
+        type: "error",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -86,17 +127,28 @@ export default function Contact() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
+            {formStatus.type === "success" ? (
+              <div className="flex flex-col items-center justify-center py-8 text-center">
+                <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
+                <h3 className="text-2xl font-semibold mb-2">Thank You!</h3>
+                <p className="text-gray-600 mb-6">{formStatus.message}</p>
+                <Button
+                  onClick={() => setFormStatus({ message: "", type: "" })}
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800"
+                >
+                  Submit Another Message
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <Input
                   placeholder="Your Name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
-              </div>
-              <div>
                 <Input
                   type="email"
                   placeholder="Your Email"
@@ -104,9 +156,8 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
-              </div>
-              <div>
                 <Textarea
                   placeholder="Your Message"
                   name="message"
@@ -114,15 +165,32 @@ export default function Contact() {
                   onChange={handleChange}
                   rows={5}
                   required
+                  disabled={isSubmitting}
                 />
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white"
-              >
-                Send Message
-              </Button>
-            </form>
+
+                {formStatus.type === "error" && (
+                  <div className="flex items-center p-4 text-sm border rounded-md border-red-200 bg-red-50 text-red-600">
+                    <AlertCircle className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <p>{formStatus.message}</p>
+                  </div>
+                )}
+
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
+                </Button>
+              </form>
+            )}
           </CardContent>
         </Card>
       </div>

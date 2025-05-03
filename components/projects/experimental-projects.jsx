@@ -29,7 +29,7 @@ export default function ExperimentalProjects() {
             className="overflow-hidden border-dashed hover:border-primary/50 transition-colors flex flex-col"
           >
             {/* Full view image */}
-            <div className="relative w-full h-56 md:h-64">
+            <div className="relative w-full h-56 md:h-80">
               <Image
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
@@ -47,12 +47,12 @@ export default function ExperimentalProjects() {
                 <CardTitle className="flex items-center gap-2">
                   {project.title}
                 </CardTitle>
-                <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex flex-wrap gap-2 ">
                   {project.technologies.map((tech) => (
                     <Badge
                       key={tech}
                       variant="outline "
-                      className="bg-muted px-3 py-1 rounded-full text-xs"
+                      className="bg-muted text-gray-100 px-3 py-1 mt-3 rounded-full text-xs"
                     >
                       {tech}
                     </Badge>
@@ -64,12 +64,8 @@ export default function ExperimentalProjects() {
                   {project.description}
                 </p>
               </CardContent>
-              <CardFooter className="flex justify-between mt-auto">
-                <Button
-                  asChild
-                  variant="secondary"
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 text-white"
-                >
+              <CardFooter className="flex justify-between mt-[-20]">
+                <Button asChild variant="secondary">
                   <Link href={`/project/${project.id}`}>View Details</Link>
                 </Button>
                 {project.liveUrl && (
