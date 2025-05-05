@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="py-24 md:py-32 container">
       <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-3xl md:text-6xl font-bold tracking-tight mb-6">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
           Creative Developer & <span className="text-primary">Designer</span>
         </h1>
         <p className="text-sm md:text-xl text-muted-foreground mb-8">
