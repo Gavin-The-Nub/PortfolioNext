@@ -6,10 +6,10 @@ export default function Hero() {
   return (
     <section className="py-24 md:py-32 container">
       <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+        <h1 className="text-3xl md:text-6xl font-bold tracking-tight mb-6">
           Creative Developer & <span className="text-primary">Designer</span>
         </h1>
-        <p className="text-xl text-muted-foreground mb-8">
+        <p className="text-sm md:text-xl text-muted-foreground mb-8">
           Building innovative web experiences with a focus on performance,
           accessibility, and cutting-edge design.
         </p>
@@ -17,7 +17,7 @@ export default function Hero() {
           <Button
             asChild
             size="lg"
-            className="px-6 py-6 text-base font-medium bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+            className="px-6 py-6 md:text-base font-medium bg-gradient-to-r from-blue-500 to-purple-600 text-white"
           >
             <Link href="/#projects" className="flex items-center">
               View Projects <ArrowRight className="ml-2 h-4 w-4" />
@@ -26,7 +26,7 @@ export default function Hero() {
           <Button
             variant="outline"
             size="lg"
-            className="px-6 py-6 text-base font-medium"
+            className="px-6 py-6 md:text-base font-medium"
           >
             <Link href="/#contact">Contact Me</Link>
           </Button>

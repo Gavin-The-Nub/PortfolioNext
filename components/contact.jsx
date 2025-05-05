@@ -77,8 +77,8 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 md:py-24 container">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <h2 className=" text-2xl md:text-3xl font-bold mb-4">Get In Touch</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto text-xs md:text-sm">
           Have a project in mind or want to collaborate? Feel free to reach out!
         </p>
       </div>
@@ -87,7 +87,7 @@ export default function Contact() {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Contact Information</CardTitle>
-            <CardDescription>
+            <CardDescription className="text-xs md:text-sm">
               Here are the ways you can reach me
             </CardDescription>
           </CardHeader>
@@ -96,21 +96,25 @@ export default function Contact() {
               <Mail className="h-5 w-5 text-primary mt-0.5" />
               <div>
                 <h3 className="font-medium">Email</h3>
-                <p className="text-muted-foreground">lodorian18@gmail.com</p>
+                <p className="text-muted-foreground text-sm">
+                  lodorian18@gmail.com
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Phone className="h-5 w-5 text-primary mt-0.5" />
               <div>
                 <h3 className="font-medium">Phone</h3>
-                <p className="text-muted-foreground">+63 951 265 1667</p>
+                <p className="text-muted-foreground text-sm">
+                  +63 951 265 1667
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <MapPin className="h-5 w-5 text-primary mt-0.5" />
               <div>
                 <h3 className="font-medium">Location</h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   Lipa, Batangas, Philippines
                 </p>
               </div>
@@ -121,7 +125,7 @@ export default function Contact() {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Send a Message</CardTitle>
-            <CardDescription>
+            <CardDescription className="text-xs md:text-sm">
               Fill out the form below and I'll get back to you as soon as
               possible
             </CardDescription>

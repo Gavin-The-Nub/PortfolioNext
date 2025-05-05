@@ -55,8 +55,8 @@ export default function BusinessProjects() {
 
               {/* Details */}
               <div className="w-full md:col-span-2 bg-card p-4 md:p-8 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">
+                <h3 className="md:text-2xl font-bold mb-2">{project.title}</h3>
+                <p className="text-muted-foreground mb-4 md:text-sm text-xs">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -74,14 +74,16 @@ export default function BusinessProjects() {
                     asChild
                     className="bg-gradient-to-r from-blue-500 to-purple-600 text-white"
                   >
-                    <Link href={`/project/${project.id}`}>View Details</Link>
+                    <Link href={`/project/${project.id}`} className="text-xs">
+                      View Details
+                    </Link>
                   </Button>
                   <Button variant="outline" asChild>
                     <Link
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 md:text-sm text-xs"
                     >
                       Live Site
                       <ExternalLink className="h-4 w-4" />

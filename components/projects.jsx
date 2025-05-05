@@ -12,8 +12,8 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 md:py-24 container">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">My Projects</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">My Projects</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto text-xs md:text-sm">
           Explore my portfolio of work across different categories, from
           business websites to creative experiments and meme coin projects.
         </p>

@@ -21,14 +21,14 @@ export default function About() {
           />
         </div>
         <div>
-          <h2 className="text-3xl font-bold mb-6">About Me</h2>
-          <p className="text-muted-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">About Me</h2>
+          <p className="text-muted-foreground mb-4 text-xs md:text-sm">
             I'm a passionate web developer with expertise in creating modern,
             responsive websites and applications. With a background in both
             design and development, I bring a unique perspective to every
             project.
           </p>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-muted-foreground mb-6 text-xs md:text-sm">
             My journey in web development started 3 years ago, and since then,
             I've worked on various projects from business websites and even meme
             coin projects.
@@ -36,7 +36,7 @@ export default function About() {
           <div className="grid grid-cols-2 gap-4 mb-8">
             <div>
               <h3 className="font-medium mb-2">Skills</h3>
-              <ul className="text-muted-foreground space-y-1">
+              <ul className="text-muted-foreground space-y-1 text-sm">
                 <li>React & Next.js</li>
                 <li>Seo Optimization</li>
                 <li>UI/UX Design</li>
@@ -45,7 +45,7 @@ export default function About() {
             </div>
             <div>
               <h3 className="font-medium mb-2">Interests</h3>
-              <ul className="text-muted-foreground space-y-1">
+              <ul className="text-muted-foreground space-y-1 text-sm">
                 <li>Web3 Development</li>
                 <li>Blockchain</li>
                 <li>Artificial Intelligence</li>
