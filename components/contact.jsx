@@ -147,6 +147,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <Input
                   placeholder="Your Name"
+                  className="text-sm"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
@@ -156,6 +157,7 @@ export default function Contact() {
                 <Input
                   type="email"
                   placeholder="Your Email"
+                  className="text-sm"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
@@ -165,6 +167,7 @@ export default function Contact() {
                 <Textarea
                   placeholder="Your Message"
                   name="message"
+                  className="text-sm"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
