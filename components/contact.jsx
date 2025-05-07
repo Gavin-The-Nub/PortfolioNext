@@ -95,8 +95,8 @@ export default function Contact() {
             <div className="flex items-start gap-4">
               <Mail className="h-5 w-5 text-primary mt-0.5" />
               <div>
-                <h3 className="font-medium">Email</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="md:text-sm text-xs">Email</h3>
+                <p className="text-muted-foreground md:text-sm text-xs">
                   lodorian18@gmail.com
                 </p>
               </div>
@@ -104,8 +104,8 @@ export default function Contact() {
             <div className="flex items-start gap-4">
               <Phone className="h-5 w-5 text-primary mt-0.5" />
               <div>
-                <h3 className="font-medium">Phone</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="md:text-sm text-xs">Phone</h3>
+                <p className="text-muted-foreground md:text-sm text-xs">
                   +63 951 265 1667
                 </p>
               </div>
@@ -113,8 +113,8 @@ export default function Contact() {
             <div className="flex items-start gap-4">
               <MapPin className="h-5 w-5 text-primary mt-0.5" />
               <div>
-                <h3 className="font-medium">Location</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="md:text-sm text-xs">Location</h3>
+                <p className="text-muted-foreground md:text-sm text-xs">
                   Lipa, Batangas, Philippines
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <Input
                   placeholder="Your Name"
-                  className="text-sm"
+                  className="md:text-sm text-xs"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
@@ -157,7 +157,7 @@ export default function Contact() {
                 <Input
                   type="email"
                   placeholder="Your Email"
-                  className="text-sm"
+                  className="md:text-sm text-xs"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
@@ -167,7 +167,7 @@ export default function Contact() {
                 <Textarea
                   placeholder="Your Message"
                   name="message"
-                  className="text-sm"
+                  className="md:text-sm text-xs"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
@@ -184,7 +184,7 @@ export default function Contact() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white md:text-sm text-xs"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

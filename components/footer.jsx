@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex gap-4">
               <Button variant="ghost" size="icon" asChild>
                 <Link
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/IanDev18"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -30,7 +30,7 @@ export default function Footer() {
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/gavin-hadrian-lodor-full-stack-web-developer-188a38322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app&fbclid=IwY2xjawJx1gZleHRuA2FlbQIxMAABHgusCqq2j3ttZolnwZyEspyVdsMy_PADteNaHF0z2ukLnaWX2PecZOgWwfPH_aem_8-tKMy4e_5G-gJGviDLOJA"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -40,7 +40,7 @@ export default function Footer() {
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/iandev18/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

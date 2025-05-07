@@ -57,10 +57,14 @@ export default function ProjectPage() {
           </div>
 
           <div className="prose dark:prose-invert mb-8">
-            <p className="text-muted-foreground">{project.description}</p>
-            <p className="text-muted-foreground mt-4">
-              {project.longDescription}
+            <p className="text-muted-foreground md:text-sm text-xs mb-4">
+              {project.description}
             </p>
+            <ul className="text-muted-foreground mb-4 md:text-sm text-xs list-disc pl-5">
+              {project.longDescription.split("\n").map((line, index) => (
+                <li key={index}>{line.replace(/^- /, "")}</li>
+              ))}
+            </ul>
           </div>
 
           <div className="flex flex-wrap gap-4">

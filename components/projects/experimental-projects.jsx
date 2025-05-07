@@ -17,7 +17,7 @@ import { experimentalProjects } from "@/data/projects";
 export default function ExperimentalProjects() {
   return (
     <div className="space-y-8">
-      <p className="text-muted-foreground text-center mb-6">
+      <p className="text-muted-foreground text-center mb-6 md:sm text-sm">
         These are just for fun experiments and coding adventures I've created
         while learning and exploring new technologies.
       </p>
@@ -44,7 +44,7 @@ export default function ExperimentalProjects() {
             {/* Content section */}
             <div className="flex flex-col flex-1 justify-between">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 md:text-xl text-lg">
                   {project.title}
                 </CardTitle>
                 <div className="flex flex-wrap gap-2 ">
@@ -52,7 +52,7 @@ export default function ExperimentalProjects() {
                     <Badge
                       key={tech}
                       variant="outline "
-                      className="bg-muted text-gray-100 px-3 py-1 mt-3 rounded-full text-xs"
+                      className="bg-muted text-gray-400 px-3 py-1 mt-0 rounded-full text-xs"
                     >
                       {tech}
                     </Badge>
@@ -60,13 +60,18 @@ export default function ExperimentalProjects() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground hidden">
+                <p className="text-muted-foreground mb-2 md:text-sm text-xs">
                   {project.description}
                 </p>
               </CardContent>
               <CardFooter className="flex justify-between mt-[-20]">
                 <Button asChild variant="secondary">
-                  <Link href={`/project/${project.id}`}>View Details</Link>
+                  <Link
+                    className="md:text-sm text-xs"
+                    href={`/project/${project.id}`}
+                  >
+                    View Details
+                  </Link>
                 </Button>
                 {project.liveUrl && (
                   <Button variant="outline" asChild>
@@ -74,7 +79,7 @@ export default function ExperimentalProjects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 md:text-sm text-xs"
                     >
                       See it live
                       <ExternalLink className="h-4 w-4" />

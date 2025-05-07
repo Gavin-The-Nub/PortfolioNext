@@ -25,10 +25,16 @@ export default function Projects() {
         onValueChange={setActiveTab}
         className="w-full"
       >
-        <TabsList className="grid w-full grid-cols-3 mb-8">
-          <TabsTrigger value="business">Business</TabsTrigger>
-          <TabsTrigger value="meme">Meme Coin</TabsTrigger>
-          <TabsTrigger value="experimental">Personal</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-3 mb-8 ">
+          <TabsTrigger value="business" className="md:text-sm text-xs">
+            Business
+          </TabsTrigger>
+          <TabsTrigger value="meme" className="md:text-sm text-xs">
+            Meme Coin
+          </TabsTrigger>
+          <TabsTrigger value="experimental" className="md:text-sm text-xs">
+            Personal
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="business">
           <BusinessProjects />

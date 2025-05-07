@@ -74,7 +74,10 @@ export default function BusinessProjects() {
                     asChild
                     className="bg-gradient-to-r from-blue-500 to-purple-600 text-white"
                   >
-                    <Link href={`/project/${project.id}`} className="text-xs">
+                    <Link
+                      href={`/project/${project.id}`}
+                      className="md:text-sm text-xs"
+                    >
                       View Details
                     </Link>
                   </Button>
