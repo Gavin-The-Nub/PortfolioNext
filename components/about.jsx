@@ -9,7 +9,7 @@ export default function About() {
   const containerRef = useRef(null);
 
   return (
-    <section id="about" className="py-16 md:py-24 container relative h-screen">
+    <section id="about" className="py-16 md:py-24 container relative ">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="relative aspect-square w-full max-w-md mx-auto rounded-xl overflow-hidden">
           <Image
