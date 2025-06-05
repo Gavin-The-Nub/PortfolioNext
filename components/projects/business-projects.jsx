@@ -56,10 +56,10 @@ export default function BusinessProjects() {
               {/* Details */}
               <div className="w-full md:col-span-2 bg-card p-4 md:p-8 flex flex-col justify-center">
                 <h3 className="md:text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 md:text-sm text-xs">
+                <p className="text-muted-foreground mb-4 md:text-sm text-xs font-extralight">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-6 font-extralight">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -76,7 +76,7 @@ export default function BusinessProjects() {
                   >
                     <Link
                       href={`/project/${project.id}`}
-                      className="md:text-sm text-xs"
+                      className="md:text-sm text-xs font-extralight"
                     >
                       View Details
                     </Link>
@@ -86,7 +86,7 @@ export default function BusinessProjects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 md:text-sm text-xs"
+                      className="flex items-center gap-2 md:text-sm text-xs font-extralight"
                     >
                       Live Site
                       <ExternalLink className="h-4 w-4" />

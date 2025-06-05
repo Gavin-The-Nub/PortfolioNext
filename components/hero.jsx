@@ -1,15 +1,24 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Facebook, Linkedin, Instagram } from "lucide-react";
+import { PortfolioScene } from "@/components/portfolio-scene";
 
 export default function Hero() {
   return (
-    <section className="py-24 md:py-32 container">
-      <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Creative Developer & <span className="text-primary">Designer</span>
+    <section className="relative container">
+      {/* 3D Background */}
+      <div className="absolute inset-0 z-0">
+        <PortfolioScene />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-3xl mx-auto text-center h-screen flex items-center justify-center flex-col">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white">
+          Creative Developer & <span className="text-blue-500">Designer</span>
         </h1>
-        <p className="text-sm md:text-xl text-muted-foreground mb-8">
+        <p className="text-sm md:text-xl text-gray-300 mb-8 font-extralight">
           Building innovative web experiences with a focus on performance,
           accessibility, and cutting-edge design.
         </p>
@@ -19,20 +28,28 @@ export default function Hero() {
             size="lg"
             className="px-6 py-6 md:text-base font-medium bg-gradient-to-r from-blue-500 to-purple-600 text-white"
           >
-            <Link href="/#projects" className="flex items-center">
+            <Link
+              href="/#projects"
+              className="flex items-center font-extralight"
+            >
               View Projects <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button
             variant="outline"
             size="lg"
-            className="px-6 py-6 md:text-base font-medium"
+            className="px-6 py-6 md:text-base font-extralight border-blue-500 text-blue-400 hover:bg-blue-900/20"
           >
             <Link href="/#contact">Contact Me</Link>
           </Button>
         </div>
         <div className="flex justify-center gap-6">
-          <Button variant="ghost" size="icon" asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="text-white hover:text-blue-400"
+          >
             <Link
               href="https://www.facebook.com/IanDev18"
               target="_blank"
@@ -42,7 +59,12 @@ export default function Hero() {
               <span className="sr-only">Facebook</span>
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="text-white hover:text-blue-400"
+          >
             <Link
               href="https://www.linkedin.com/in/gavin-hadrian-lodor-full-stack-web-developer-188a38322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app&fbclid=IwY2xjawJx1gZleHRuA2FlbQIxMAABHgusCqq2j3ttZolnwZyEspyVdsMy_PADteNaHF0z2ukLnaWX2PecZOgWwfPH_aem_8-tKMy4e_5G-gJGviDLOJA"
               target="_blank"
@@ -52,7 +74,12 @@ export default function Hero() {
               <span className="sr-only">LinkedIn</span>
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="text-white hover:text-blue-400"
+          >
             <Link
               href="https://www.instagram.com/iandev18/"
               target="_blank"

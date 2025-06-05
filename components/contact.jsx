@@ -87,7 +87,7 @@ export default function Contact() {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Contact Information</CardTitle>
-            <CardDescription className="text-xs md:text-sm">
+            <CardDescription className="text-xs md:text-sm font-extralight">
               Here are the ways you can reach me
             </CardDescription>
           </CardHeader>
@@ -96,7 +96,7 @@ export default function Contact() {
               <Mail className="h-5 w-5 text-primary mt-0.5" />
               <div>
                 <h3 className="md:text-sm text-xs">Email</h3>
-                <p className="text-muted-foreground md:text-sm text-xs">
+                <p className="text-muted-foreground md:text-sm text-xs font-extralight">
                   lodorian18@gmail.com
                 </p>
               </div>
@@ -105,7 +105,7 @@ export default function Contact() {
               <Phone className="h-5 w-5 text-primary mt-0.5" />
               <div>
                 <h3 className="md:text-sm text-xs">Phone</h3>
-                <p className="text-muted-foreground md:text-sm text-xs">
+                <p className="text-muted-foreground md:text-sm text-xs font-extralight">
                   +63 951 265 1667
                 </p>
               </div>
@@ -114,7 +114,7 @@ export default function Contact() {
               <MapPin className="h-5 w-5 text-primary mt-0.5" />
               <div>
                 <h3 className="md:text-sm text-xs">Location</h3>
-                <p className="text-muted-foreground md:text-sm text-xs">
+                <p className="text-muted-foreground md:text-sm text-xs font-extralight">
                   Lipa, Batangas, Philippines
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default function Contact() {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Send a Message</CardTitle>
-            <CardDescription className="text-xs md:text-sm">
+            <CardDescription className="text-xs md:text-sm font-extralight">
               Fill out the form below and I'll get back to you as soon as
               possible
             </CardDescription>
@@ -147,7 +147,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <Input
                   placeholder="Your Name"
-                  className="md:text-sm text-xs"
+                  className="md:text-sm text-xs font-extralight"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
@@ -157,7 +157,7 @@ export default function Contact() {
                 <Input
                   type="email"
                   placeholder="Your Email"
-                  className="md:text-sm text-xs"
+                  className="md:text-sm text-xs font-extralight"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
@@ -167,7 +167,7 @@ export default function Contact() {
                 <Textarea
                   placeholder="Your Message"
                   name="message"
-                  className="md:text-sm text-xs"
+                  className="md:text-sm text-xs font-extralight"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
@@ -184,7 +184,7 @@ export default function Contact() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white md:text-sm text-xs"
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white md:text-sm text-xs font-extralight"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

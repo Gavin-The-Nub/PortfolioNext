@@ -10,10 +10,10 @@ export default function Projects() {
   const [activeTab, setActiveTab] = useState("business");
 
   return (
-    <section id="projects" className="py-16 md:py-24 container">
+    <section id="projects" className="py-16 md:py-24 container h-screen">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">My Projects</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto text-xs md:text-sm">
+        <p className="text-muted-foreground max-w-2xl mx-auto text-xs md:text-sm font-extralight">
           Explore my portfolio of work across different categories, from
           business websites to creative experiments and meme coin projects.
         </p>
@@ -26,13 +26,22 @@ export default function Projects() {
         className="w-full"
       >
         <TabsList className="grid w-full grid-cols-3 mb-8 ">
-          <TabsTrigger value="business" className="md:text-sm text-xs">
+          <TabsTrigger
+            value="business"
+            className="md:text-sm text-xs font-extralight"
+          >
             Business
           </TabsTrigger>
-          <TabsTrigger value="meme" className="md:text-sm text-xs">
+          <TabsTrigger
+            value="meme"
+            className="md:text-sm text-xs font-extralight"
+          >
             Meme Coin
           </TabsTrigger>
-          <TabsTrigger value="experimental" className="md:text-sm text-xs">
+          <TabsTrigger
+            value="experimental"
+            className="md:text-sm text-xs font-extralight"
+          >
             Personal
           </TabsTrigger>
         </TabsList>
