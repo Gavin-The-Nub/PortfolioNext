@@ -24,13 +24,12 @@ export function LoadingScreen({ isLoading }) {
       }`}
     >
       <div className="card">
-        <div className="loader">
+        <div className="loader text-sm font-extralight">
           <p>loading</p>
           <div className="words">
             <span className="word">crashout</span>
             <span className="word">braincells</span>
             <span className="word">bugs</span>
-
             <span className="word">coffee</span>
             <span className="word">magic</span>
           </div>

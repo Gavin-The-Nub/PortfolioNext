@@ -110,23 +110,21 @@ body::-webkit-scrollbar {
   /* color used to softly clip top and bottom of the .words container */
   --bg-color: #111;
   background-color: var(--bg-color);
-  padding: 1rem 2rem;
-  border-radius: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
 }
 
 .loader {
   color: rgb(124, 124, 124);
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 25px;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  height: 40px;
-  padding: 10px 10px;
+  height: 24px;
+  padding: 6px 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .words {
@@ -150,7 +148,7 @@ body::-webkit-scrollbar {
 .word {
   display: block;
   height: 100%;
-  padding-left: 6px;
+  padding-left: 4px;
   color: #956afa;
   animation: spin_4991 4s infinite;
 }
