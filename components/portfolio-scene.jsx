@@ -7,9 +7,10 @@ import {
   OrbitControls,
   Sphere,
   MeshDistortMaterial,
+  useProgress,
 } from "@react-three/drei";
 
-export function PortfolioScene() {
+export function PortfolioScene({ onLoaded, onProgress }) {
   return (
     <Canvas camera={{ position: [0, 0, 15], fov: 60 }}>
       <color attach="background" args={["#000000"]} />
@@ -27,11 +28,58 @@ export function PortfolioScene() {
         maxPolarAngle={Math.PI / 1.5}
       />
 
+      <SceneLoader onLoaded={onLoaded} onProgress={onProgress} />
       <GridPoints />
       <FloatingParticles />
       <DataFlowLines />
     </Canvas>
   );
+}
+
+// Component to detect when scene is loaded
+function SceneLoader({ onLoaded, onProgress }) {
+  const { progress, active, loaded, total } = useProgress();
+  const [sceneReady, setSceneReady] = useState(false);
+  const [internalProgress, setInternalProgress] = useState(0);
+
+  // Update progress
+  useEffect(() => {
+    const calculatedProgress = active ? progress : 100;
+    setInternalProgress(calculatedProgress);
+    onProgress && onProgress(calculatedProgress);
+  }, [progress, active, onProgress]);
+
+  // Handle scene ready state
+  useEffect(() => {
+    if (!active && progress === 100 && !sceneReady) {
+      // Add a small delay to ensure all components are rendered
+      const timer = setTimeout(() => {
+        setSceneReady(true);
+        onLoaded && onLoaded();
+      }, 1000); // Wait 1 second after assets are loaded
+
+      return () => clearTimeout(timer);
+    }
+  }, [active, progress, sceneReady, onLoaded]);
+
+  // Simulate additional loading time for scene setup
+  useEffect(() => {
+    if (!active && progress === 100) {
+      let currentProgress = 100;
+      const interval = setInterval(() => {
+        currentProgress += 0.5;
+        if (currentProgress >= 100) {
+          clearInterval(interval);
+          return;
+        }
+        onProgress && onProgress(Math.min(currentProgress, 100));
+      }, 50);
+
+      return () => clearInterval(interval);
+    }
+  }, [active, progress, onProgress]);
+
+  return null;
 }
 
 function GridPoints() {
@@ -109,10 +157,12 @@ function FloatingParticles() {
     if (particlesRef.current) {
       particlesRef.current.children.forEach((particle, i) => {
         const data = particles[i];
-        // Move particles up and reset when they reach the top
-        particle.position.y += data.speed * 0.02;
-        if (particle.position.y > 5) {
-          particle.position.y = -5;
+        if (data) {
+          // Move particles up and reset when they reach the top
+          particle.position.y += data.speed * 0.02;
+          if (particle.position.y > 5) {
+            particle.position.y = -5;
+          }
         }
       });
     }
