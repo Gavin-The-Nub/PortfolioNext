@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 
 const inter = Inter({ subsets: ["latin"] });
+import SplashCursor from "@/components/ui/splashcursor";
 
 export const metadata = {
   title: "Portfolio | Developer & Designer",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           {children}
+          <SplashCursor />
         </ThemeProvider>
       </body>
     </html>

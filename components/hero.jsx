@@ -6,6 +6,7 @@ import { ArrowRight, Facebook, Linkedin, Instagram } from "lucide-react";
 import { PortfolioScene } from "@/components/portfolio-scene";
 import { LoadingScreen } from "@/components/loading-screen";
 import { useState } from "react";
+import Hyperspeed from "@/components/ui/hyperspeed";
 
 export default function Hero() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,9 +18,17 @@ export default function Hero() {
   return (
     <>
       {/* Loading Screen with smooth transition */}
-      <LoadingScreen isLoading={isLoading} />
+      <div
+        className={`fixed inset-0 z-50 w-full h-full bg-black transition-opacity duration-700 ${
+          isLoading
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <Hyperspeed />
+      </div>
 
-      <section className="relative container">
+      <section className="relative ">
         {/* 3D Background */}
         <div className="absolute inset-0 z-0">
           <PortfolioScene onLoaded={handleSceneLoaded} />
