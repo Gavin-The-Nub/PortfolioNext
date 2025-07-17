@@ -109,31 +109,100 @@ export const businessProjects = [
 
     category: "business",
   },
+  {
+    id: "business-6",
+    title: "Forbes Capital Cars",
+    description:
+      "A car buy-and-sell platform with an integrated CMS and admin dashboard to manage vehicles and articles.",
+    longDescription:
+      "A complete solution for car dealerships and resellers.\n" +
+      "Features a sleek homepage showcasing available vehicles with filtering options.\n" +
+      "Integrated CMS allows admins to add, edit, and delete vehicle listings and blog articles.\n" +
+      "Admin dashboard provides control over content and inventory management.\n" +
+      "Optimized for fast performance and mobile responsiveness.\n" +
+      "Built using Next.js, TypeScript, Supabase, Tailwind CSS, and Shadcn UI.\n" +
+      "Modern UI with clean navigation and a professional automotive brand presence.",
+    image: "/b6.png",
+    gallery: ["/b6a.png", "/b6b.png", "/b6c.png"],
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Shadcn", "Supabase"],
+    liveUrl: "https://forbes-next.vercel.app/",
+    category: "business",
+  },
+  {
+    id: "business-7",
+    title: "Feralde",
+    description:
+      "A modern and elegant perfume website with animated visuals and interactive product showcasing.",
+    longDescription:
+      "Designed to elevate the online presence of a fragrance brand.\n" +
+      "Smooth GSAP animations highlight premium perfume collections.\n" +
+      "Interactive sections and product displays emphasize luxury branding.\n" +
+      "Built with a focus on design aesthetics and smooth transitions.\n" +
+      "Fully responsive and visually captivating across all devices.\n" +
+      "Built using Next.js, TypeScript, Tailwind CSS, and Shadcn UI.\n" +
+      "Perfect for perfume businesses seeking a digital showcase with style.",
+    image: "/b7.png",
+    gallery: ["/b7a.png", "/b7b.png", "/b7c.png"],
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Shadcn"],
+    liveUrl: "https://feralde.vercel.app/",
+    category: "business",
+  },
+  {
+    id: "business-8",
+    title: "Alpha Digital Solutions",
+    description:
+      "A digital marketing agency website with a CMS and admin dashboard to manage blogs and service pricing.",
+    longDescription:
+      "Crafted for modern marketing agencies aiming to maintain control over their content.\n" +
+      "Features a clean homepage with service highlights and animated brand elements.\n" +
+      "Admin dashboard includes tools to add, edit, or delete blog entries and pricing tiers.\n" +
+      "CMS ensures content flexibility and easy updates without touching code.\n" +
+      "Built using Next.js, TypeScript, Supabase, Tailwind CSS, and Shadcn UI.\n" +
+      "Responsive layout ensures optimal experience across devices.\n" +
+      "A polished platform to showcase expertise and convert leads effectively.",
+    image: "/b8.png",
+    gallery: ["/b8a.png", "/b8b.png", "/b8c.png"],
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Shadcn", "Supabase"],
+    liveUrl: "hhttps://alphadigital-mauve.vercel.app/",
+    category: "business",
+  },
 ];
 // Meme coin projects
 export const memeProjects = [
   {
-    id: "meme-1",
-    title: "Bleep",
-    description: "$ 216k mcap",
+    id: "meme-11",
+    title: "trumpus Maximus",
+    description: "$ 3.32m mcap",
     longDescription:
-      "Bleep - Bleep is a fun and quirky meme coin that brings chaotic bleep energy to the crypto world.",
-    image: "/m1.webp",
-    gallery: ["/m1a.png", "/m1b.png", "/m1c.png"],
-    technologies: ["Next.js", "Tailwind", "Shadcn", "Canvas"],
-    liveUrl: "https://www.bleepcto.com/",
+      "trumpus Maximus - The biggest, boldest, most presidential meme coin. Period.",
+    image: "/m11.png",
+    gallery: ["/m11a.png", "/m11b.png", "/m11c.png"],
+    technologies: ["React", "Scss"],
+    liveUrl: "https://trumpusmaximus.xyz/",
     category: "meme",
   },
   {
-    id: "meme-2",
-    title: "Pleb CTO",
-    description: "$ 3.22m mcap",
+    id: "meme-4",
+    title: "The Duster",
+    description: "$ 381k mcap",
     longDescription:
-      "Pleb CTO - Pleb CTO is a meme coin for the internet underdogs and crypto plebs with a twist of humor.",
-    image: "/m2.webp",
-    gallery: ["/m2a.png", "/m2b.png", "/m2c.png"],
-    technologies: ["Next.js", "Tailwind", "Shadcn", "Canvas"],
-    liveUrl: "https://plebcto.lol/",
+      "The Duster - The Duster is here to sweep the meme streets clean with some dusty memes.",
+    image: "/m4.png",
+    gallery: ["/m4a.png", "/m4b.png", "/m4c.png"],
+    technologies: ["React", "Scss", "Canvas"],
+    liveUrl: "https://theduster.xyz/",
+    category: "meme",
+  },
+  {
+    id: "meme-9",
+    title: "Chill guy",
+    description: "$ 776.46m mcap",
+    longDescription:
+      "Chill guy - Chill guy is the ultimate laid-back meme coin. Just vibes and crypto gains.",
+    image: "/m9.png",
+    gallery: ["/m9a.png", "/m9b.png", "/m9c.png"],
+    technologies: ["React", "Scss"],
+    liveUrl: "https://chill-guy-meme.com/",
     category: "meme",
   },
   {
@@ -142,7 +211,7 @@ export const memeProjects = [
     description: "$ 15.92m mcap",
     longDescription:
       "Smolpep - Smol pep is a meme coin from a meme smol pep. Simple, small, and funny.",
-    image: "/m3.webp",
+    image: "/m3.png",
     gallery: ["/m3a.png", "/m3b.png", "/m3c.png"],
     technologies: ["React", "Scss", "Canvas"],
     liveUrl: "https://smolpep.xyz/",
@@ -154,7 +223,7 @@ export const memeProjects = [
     description: "$ 447k mcap",
     longDescription:
       "Mystery - Mystery the frog is a strange and funny meme coin for frog lovers who enjoy surprises.",
-    image: "/m12.webp",
+    image: "/m12.png",
     gallery: ["/m12a.png", "/m12b.png", "/m12c.png"],
     technologies: ["React", "Scss"],
     liveUrl: "https://mysterythefrog.netlify.app/",
@@ -166,7 +235,7 @@ export const memeProjects = [
     description: "$ 602k mcap",
     longDescription:
       "Hush Money - Hush Money is the meme coin for silent ballers. Shhh... don't tell anyone.",
-    image: "/m6.webp",
+    image: "/m6.png",
     gallery: ["/m6a.png", "/m6b.png", "/m6c.png"],
     technologies: ["React", "Scss"],
     liveUrl: "https://hushmoneycto.xyz/",
@@ -178,10 +247,23 @@ export const memeProjects = [
     description: "$ 2.46m mcap",
     longDescription:
       "Percy Verence - Percy is the coin of hope and memes, a brave hero in the meme coin world.",
-    image: "/m7.webp",
+    image: "/m7.png",
     gallery: ["/m7a.png", "/m7b.png", "/m7c.png"],
     technologies: ["React", "Scss"],
     liveUrl: "https://percyverencecoin.xyz/",
+    category: "meme",
+  },
+
+  {
+    id: "meme-10",
+    title: "Dogestan",
+    description: "$ 111k mcap",
+    longDescription:
+      "Dogestan - Dogestan is the homeland of loyal meme coins. Bark with pride.",
+    image: "/m10.png",
+    gallery: ["/m10a.png", "/m10b.png", "/m10c.png"],
+    technologies: ["React", "Scss"],
+    liveUrl: "https://dogestan.xyz/",
     category: "meme",
   },
   {
@@ -190,46 +272,10 @@ export const memeProjects = [
     description: "$ 527k mcap",
     longDescription:
       "Gyat coin - Gyat coin is for the culture. A funny meme coin with bold internet energy.",
-    image: "/m8.webp",
+    image: "/m8.png",
     gallery: ["/m8a.png", "/m8b.png", "/m8c.png"],
     technologies: ["React", "Scss"],
     liveUrl: "https://gyatcoin.netlify.app/",
-    category: "meme",
-  },
-  {
-    id: "meme-9",
-    title: "Chill guy",
-    description: "$ 776.46m mcap",
-    longDescription:
-      "Chill guy - Chill guy is the ultimate laid-back meme coin. Just vibes and crypto gains.",
-    image: "/m9.webp",
-    gallery: ["/m9a.png", "/m9b.png", "/m9c.png"],
-    technologies: ["React", "Scss"],
-    liveUrl: "https://chill-guy-meme.com/",
-    category: "meme",
-  },
-  {
-    id: "meme-10",
-    title: "Dogestan",
-    description: "$ 111k mcap",
-    longDescription:
-      "Dogestan - Dogestan is the homeland of loyal meme coins. Bark with pride.",
-    image: "/m10.webp",
-    gallery: ["/m10a.png", "/m10b.png", "/m10c.png"],
-    technologies: ["React", "Scss"],
-    liveUrl: "https://dogestan.xyz/",
-    category: "meme",
-  },
-  {
-    id: "meme-11",
-    title: "trumpus Maximus",
-    description: "$ 3.32m mcap",
-    longDescription:
-      "trumpus Maximus - The biggest, boldest, most presidential meme coin. Period.",
-    image: "/m11.webp",
-    gallery: ["/m11a.png", "/m11b.png", "/m11c.png"],
-    technologies: ["React", "Scss"],
-    liveUrl: "https://trumpusmaximus.xyz/",
     category: "meme",
   },
   {
@@ -238,22 +284,22 @@ export const memeProjects = [
     description: "$ 5.05m mcap",
     longDescription:
       "First Crypto President - The meme coin that leads with humor. Hail to the meme chief.",
-    image: "/m5.webp",
+    image: "/m5.png",
     gallery: ["/m5a.png", "/m5b.png", "/m5c.png"],
     technologies: ["React", "Scss"],
     liveUrl: "https://firstcryptopresidentcoin.xyz/",
     category: "meme",
   },
   {
-    id: "meme-4",
-    title: "The Duster",
-    description: "$ 381k mcap",
+    id: "meme-1",
+    title: "Bleep",
+    description: "$ 216k mcap",
     longDescription:
-      "The Duster - The Duster is here to sweep the meme streets clean with some dusty memes.",
-    image: "/m4.webp",
-    gallery: ["/m4a.png", "/m4b.png", "/m4c.png"],
-    technologies: ["React", "Scss", "Canvas"],
-    liveUrl: "https://theduster.xyz/",
+      "Bleep - Bleep is a fun and quirky meme coin that brings chaotic bleep energy to the crypto world.",
+    image: "/m1.png",
+    gallery: ["/m1a.png", "/m1b.png", "/m1c.png"],
+    technologies: ["Next.js", "Tailwind", "Shadcn", "Canvas"],
+    liveUrl: "https://www.bleepcto.com/",
     category: "meme",
   },
 ];

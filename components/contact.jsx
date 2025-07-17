@@ -19,6 +19,7 @@ import {
   AlertCircle,
   Loader2,
 } from "lucide-react";
+import ShinyText from "./ShinyText";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -77,7 +78,9 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 md:py-24 container">
       <div className="text-center mb-12">
-        <h2 className=" text-2xl md:text-3xl font-bold mb-4">Get In Touch</h2>
+        <h2 className=" text-2xl md:text-3xl font-bold mb-4">
+          <ShinyText text="Get In Touch" speed={3} className="..." />
+        </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto text-xs md:text-sm">
           Have a project in mind or want to collaborate? Feel free to reach out!
         </p>
@@ -86,7 +89,9 @@ export default function Contact() {
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Contact Information</CardTitle>
+            <CardTitle className="text-lg">
+              <ShinyText text="Contact Information" speed={3} className="..." />
+            </CardTitle>
             <CardDescription className="text-xs md:text-sm font-extralight">
               Here are the ways you can reach me
             </CardDescription>
@@ -124,7 +129,9 @@ export default function Contact() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Send a Message</CardTitle>
+            <CardTitle className="text-lg">
+              <ShinyText text="Send a Message" speed={3} className="..." />
+            </CardTitle>
             <CardDescription className="text-xs md:text-sm font-extralight">
               Fill out the form below and I'll get back to you as soon as
               possible
@@ -140,7 +147,11 @@ export default function Contact() {
                   onClick={() => setFormStatus({ message: "", type: "" })}
                   className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800"
                 >
-                  Submit Another Message
+                  <ShinyText
+                    text="Submit Another Message"
+                    speed={3}
+                    className="..."
+                  />
                 </Button>
               </div>
             ) : (

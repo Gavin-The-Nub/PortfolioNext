@@ -6,6 +6,7 @@ import { ArrowRight, Facebook, Linkedin, Instagram } from "lucide-react";
 import { PortfolioScene } from "@/components/portfolio-scene";
 import { LoadingScreen } from "@/components/loading-screen";
 import { useState } from "react";
+import ShinyText from "./ShinyText";
 
 export default function Hero() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +20,7 @@ export default function Hero() {
       {/* Loading Screen with smooth transition */}
       <LoadingScreen isLoading={isLoading} />
 
-      <section className="relative w-screen">
+      <section className="relative     w-screen">
         {/* 3D Background */}
         <div className="absolute inset-0 z-0  w-full">
           <PortfolioScene onLoaded={handleSceneLoaded} />
@@ -28,7 +29,11 @@ export default function Hero() {
         {/* Content */}
         <div className="relative z-10 max-w-3xl mx-auto text-center h-screen flex items-center justify-center flex-col">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white">
-            Creative Developer & <span className="text-blue-500">Designer</span>
+            <ShinyText
+              text="Creative Fullstack Developer & Designer"
+              speed={3}
+              className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
+            />
           </h1>
           <p className="text-sm md:text-xl text-gray-300 mb-8 font-extralight">
             Building innovative web experiences with a focus on performance,
