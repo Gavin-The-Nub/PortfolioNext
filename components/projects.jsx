@@ -155,6 +155,17 @@ export default function Projects() {
                             purposes only.
                           </div>
                         )}
+                        {/* Disclaimer for meme coin projects */}
+                        {project.category === "memecoin" && (
+                          <div className="w-full mt-4 px-5 text-[10px] text-gray-300 dark:text-gray-400 text-center absolute bottom-5 left-0">
+                            Disclaimer: I was hired solely as a web
+                            developer/designer for this project. I am not the
+                            owner, creator, or official team member of this meme
+                            coin. All branding, content, and claims related to
+                            the coin are the responsibility of the project
+                            owners.
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CardContent>
