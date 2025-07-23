@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Loading Screen with smooth transition */}
       <LoadingScreen isLoading={isLoading} />
 
-      <section className="relative     w-screen">
+      <section className="relative w-full overflow-x-hidden">
         {/* 3D Background */}
         <div className="absolute inset-0 z-0  w-full">
           <PortfolioScene onLoaded={handleSceneLoaded} />

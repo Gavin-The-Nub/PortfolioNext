@@ -6,33 +6,46 @@ import { FileText } from "lucide-react";
 import Image from "next/image";
 import TiltedCard from "./TiltedCard";
 import ShinyText from "./ShinyText";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function About() {
   const containerRef = useRef(null);
+  const isMobile = useIsMobile();
 
   return (
     <section id="about" className="py-16 md:py-24 container relative ">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="relative aspect-square w-full max-w-md mx-auto rounded-xl">
-          <TiltedCard
-            imageSrc="/logo.jpg"
-            altText="Profile"
-            captionText="That's me!"
-            containerHeight="350px"
-            containerWidth="100%"
-            imageHeight="350px"
-            imageWidth="350px"
-            rotateAmplitude={12}
-            scaleOnHover={1.1}
-            showMobileWarning={false}
-            showTooltip={true}
-            displayOverlayContent={false}
-            overlayContent={
-              <p className="text-white text-center text-sm font-semibold">
-                Web Developer & Designer
-              </p>
-            }
-          />
+          {isMobile ? (
+            <Image
+              src="/logo.jpg"
+              alt="Profile"
+              width={350}
+              height={350}
+              className="rounded-xl object-cover w-full h-full"
+              priority
+            />
+          ) : (
+            <TiltedCard
+              imageSrc="/logo.jpg"
+              altText="Profile"
+              captionText="That's me!"
+              containerHeight="350px"
+              containerWidth="100%"
+              imageHeight="350px"
+              imageWidth="350px"
+              rotateAmplitude={12}
+              scaleOnHover={1.1}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={false}
+              overlayContent={
+                <p className="text-white text-center text-sm font-semibold">
+                  Web Developer & Designer
+                </p>
+              }
+            />
+          )}
         </div>
         <div>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
