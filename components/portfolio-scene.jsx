@@ -9,8 +9,10 @@ import {
   MeshDistortMaterial,
   useProgress,
 } from "@react-three/drei";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function PortfolioScene({ onLoaded, onProgress }) {
+  const isMobile = useIsMobile();
   return (
     <Canvas camera={{ position: [0, 0, 15], fov: 60 }}>
       <color attach="background" args={["#000000"]} />
@@ -29,8 +31,8 @@ export function PortfolioScene({ onLoaded, onProgress }) {
       />
 
       <SceneLoader onLoaded={onLoaded} onProgress={onProgress} />
-      <GridPoints />
-      <FloatingParticles />
+      {!isMobile && <GridPoints />}
+      {!isMobile && <FloatingParticles />}
       <DataFlowLines />
     </Canvas>
   );
