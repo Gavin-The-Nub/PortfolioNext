@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           {children}
-          <ClientSplashCursor />
+          {/* <ClientSplashCursor /> */}
         </ThemeProvider>
       </body>
     </html>

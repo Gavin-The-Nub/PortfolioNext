@@ -10,12 +10,9 @@ import {
   experimentalProjects,
 } from "@/data/projects";
 import ShinyText from "./ShinyText";
-import Image from "next/image";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("default");
-  const isMobile = useIsMobile();
 
   const categories = [
     { key: "default", label: "Default" },
@@ -24,7 +21,7 @@ export default function Projects() {
     { key: "memecoin", label: "Meme Coin" },
   ];
 
-  // Interleave business and personal projects for the default category (desktop only)
+  // Interleave business and personal projects for the default category
   function interleave(arr1, arr2) {
     const maxLength = Math.max(arr1.length, arr2.length);
     const result = [];
@@ -45,17 +42,12 @@ export default function Projects() {
   ];
 
   let filteredProjects;
-  if (isMobile) {
-    // Show only first 6 projects for performance
-    filteredProjects = allProjects.slice(0, 8);
+  if (selectedCategory === "default") {
+    filteredProjects = interleave(businessList, personalList);
   } else {
-    if (selectedCategory === "default") {
-      filteredProjects = interleave(businessList, personalList);
-    } else {
-      filteredProjects = allProjects.filter(
-        (project) => project.category === selectedCategory
-      );
-    }
+    filteredProjects = allProjects.filter(
+      (project) => project.category === selectedCategory
+    );
   }
 
   return (
@@ -71,130 +63,42 @@ export default function Projects() {
             className="text-2xl md:text-3xl font-bold mb-4"
           />
         </h2>
-        {/* Category Buttons - only show on desktop */}
-        {!isMobile && (
-          <div className="mb-12 flex flex-wrap justify-center gap-4">
-            {categories.map((cat) => (
-              <Button
-                key={cat.key}
-                variant={selectedCategory === cat.key ? "default" : "outline"}
-                onClick={() => setSelectedCategory(cat.key)}
-                className="text-sm capitalize"
-              >
-                {cat.label}
-              </Button>
-            ))}
-          </div>
-        )}
+        {/* Category Buttons */}
+        <div className="mb-12 flex flex-wrap justify-center gap-4">
+          {categories.map((cat) => (
+            <Button
+              key={cat.key}
+              variant={selectedCategory === cat.key ? "default" : "outline"}
+              onClick={() => setSelectedCategory(cat.key)}
+              className="text-sm capitalize"
+            >
+              {cat.label}
+            </Button>
+          ))}
+        </div>
 
         {/* Grid of Cards */}
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project) =>
-            isMobile ? (
-              <div
-                key={project.id}
-                className="overflow-hidden bg-zinc-100 dark:bg-zinc-900 transition-colors"
-              >
-                <CardContent className="p-0">
-                  <div className="group relative">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={400}
-                      height={400}
-                      className="w-full"
-                      loading="lazy"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 dark:bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <h3 className="text-xl font-semibold text-white dark:text-zinc-100 mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="mb-2 text-xs text-gray-300 dark:text-zinc-300 text-center px-2">
-                        {project.description}
-                      </p>
-                      {/* Stack/Technologies */}
-                      {project.technologies && (
-                        <div className="flex flex-wrap justify-center gap-2 mb-4">
-                          {project.technologies.map((tech, idx) => (
-                            <span
-                              key={idx}
-                              className="bg-gray-800 text-gray-200 text-xs px-2 py-1 rounded dark:bg-gray-200 dark:text-gray-800"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                      <div className="flex gap-2">
-                        {/* View Details Button */}
-                        <a
-                          href={`/project/${project.id}`}
-                          className="inline-block mt-2 px-4 py-2 bg-gray-100/50 text-white rounded hover:bg-gray-600 text-xs font-semibold transition-colors"
-                        >
-                          View Details
-                        </a>
-                        {/* Visit Site Button */}
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block mt-2 px-4 py-2 rounded bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-semibold transition-colors"
-                          >
-                            Visit Site
-                          </a>
-                        )}
-                      </div>
-                      {/* Disclaimer for specific projects */}
-                      {[
-                        "DLSL Admission Office",
-                        "Forbes Capital Cars",
-                        "F2A Cars",
-                        "Feralde",
-                      ].includes(project.title) && (
-                        <div className="w-full mt-4 px-5 text-[10px] text-gray-300 dark:text-gray-400 text-center absolute bottom-5 left-0">
-                          Disclaimer: This website was created as a personal
-                          portfolio project and is not affiliated with or
-                          endorsed by {project.title}. All content, including
-                          branding, is used for educational and demonstration
-                          purposes only.
-                        </div>
-                      )}
-                      {/* Disclaimer for meme coin projects */}
-                      {project.category === "memecoin" && (
-                        <div className="w-full mt-4 px-5 text-[10px] text-gray-300 dark:text-gray-400 text-center absolute bottom-5 left-0">
-                          Disclaimer: I was hired solely as a web
-                          developer/designer for this project. I am not the
-                          owner, creator, or official team member of this meme
-                          coin. All branding, content, and claims related to the
-                          coin are the responsibility of the project owners.
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </CardContent>
-              </div>
-            ) : (
+        <motion.div
+          layout
+          className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <AnimatePresence>
+            {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
-                layout={!isMobile}
-                initial={isMobile ? false : { opacity: 0 }}
-                animate={isMobile ? false : { opacity: 1 }}
-                exit={isMobile ? false : { opacity: 0 }}
-                transition={isMobile ? undefined : { duration: 0.5 }}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
               >
                 <Card className="overflow-hidden bg-zinc-100 dark:bg-zinc-900 transition-colors">
                   <CardContent className="p-0">
                     <div className="group relative">
-                      <Image
+                      <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
-                        width={400}
-                        height={400}
                         className="w-full transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                        sizes="(max-width: 768px) 100vw, 33vw"
                       />
                       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 dark:bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                         <h3 className="text-xl font-semibold text-white dark:text-zinc-100 mb-2">
@@ -267,9 +171,9 @@ export default function Projects() {
                   </CardContent>
                 </Card>
               </motion.div>
-            )
-          )}
-        </div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
