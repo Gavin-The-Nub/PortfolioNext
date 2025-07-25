@@ -163,7 +163,7 @@ export const businessProjects = [
     image: "/b8.png",
     gallery: ["/b8a.png", "/b8b.png", "/b8c.png"],
     technologies: ["Next.js", "TypeScript", "Tailwind", "Shadcn", "Supabase"],
-    liveUrl: "hhttps://alphadigital-mauve.vercel.app/",
+    liveUrl: "https://alphadigital-mauve.vercel.app/",
     category: "business",
   },
 ];
