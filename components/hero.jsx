@@ -22,7 +22,7 @@ export default function Hero() {
 
       <section className="relative w-screen overflow-x-hidden">
         {/* 3D Background */}
-        <div className="absolute inset-0 z-0  w-full">
+        <div className="absolute inset-0 z-0  w-screen">
           <PortfolioScene onLoaded={handleSceneLoaded} />
         </div>
 
