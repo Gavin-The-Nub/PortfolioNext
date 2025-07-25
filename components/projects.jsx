@@ -104,73 +104,7 @@ export default function Projects() {
                         className="w-full transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 dark:bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        <h3 className="text-xl font-semibold text-white dark:text-zinc-100 mb-2">
-                          {project.title}
-                        </h3>
-                        <p className="mb-2 text-xs text-gray-300 dark:text-zinc-300 text-center px-2">
-                          {project.description}
-                        </p>
-                        {/* Stack/Technologies */}
-                        {project.technologies && (
-                          <div className="flex flex-wrap justify-center gap-2 mb-4">
-                            {project.technologies.map((tech, idx) => (
-                              <span
-                                key={idx}
-                                className="bg-gray-800 text-gray-200 text-xs px-2 py-1 rounded dark:bg-gray-200 dark:text-gray-800"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-                        <div className="flex gap-2">
-                          {/* View Details Button */}
-                          <a
-                            href={`/project/${project.id}`}
-                            className="inline-block mt-2 px-4 py-2 bg-gray-100/50 text-white rounded hover:bg-gray-600 text-xs font-semibold transition-colors"
-                          >
-                            View Details
-                          </a>
-                          {/* Visit Site Button */}
-                          {project.liveUrl && (
-                            <a
-                              href={project.liveUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-block mt-2 px-4 py-2 rounded bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-semibold transition-colors"
-                            >
-                              Visit Site
-                            </a>
-                          )}
-                        </div>
-                        {/* Disclaimer for specific projects */}
-                        {[
-                          "DLSL Admission Office",
-                          "Forbes Capital Cars",
-                          "F2A Cars",
-                          "Feralde",
-                        ].includes(project.title) && (
-                          <div className="w-full mt-4 px-5 text-[10px] text-gray-300 dark:text-gray-400 text-center absolute bottom-5 left-0">
-                            Disclaimer: This website was created as a personal
-                            portfolio project and is not affiliated with or
-                            endorsed by {project.title}. All content, including
-                            branding, is used for educational and demonstration
-                            purposes only.
-                          </div>
-                        )}
-                        {/* Disclaimer for meme coin projects */}
-                        {project.category === "memecoin" && (
-                          <div className="w-full mt-4 px-5 text-[10px] text-gray-300 dark:text-gray-400 text-center absolute bottom-5 left-0">
-                            Disclaimer: I was hired solely as a web
-                            developer/designer for this project. I am not the
-                            owner, creator, or official team member of this meme
-                            coin. All branding, content, and claims related to
-                            the coin are the responsibility of the project
-                            owners.
-                          </div>
-                        )}
-                      </div>
+                      {/* Overlay temporarily removed for testing */}
                     </div>
                   </CardContent>
                 </Card>
