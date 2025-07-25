@@ -98,13 +98,16 @@ export default function About() {
               </ul>
             </div>
           </div>
-          <Button
-            variant="outline"
-            className="gap-2"
-            onClick={() => alert("Resume is not available at the moment.")}
-          >
-            <FileText className="h-4 w-4" />
-            <ShinyText text="Download Resume" speed={3} className="inline" />
+          <Button asChild variant="outline" className="gap-2">
+            <a
+              href="/GavinLodor.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FileText className="h-4 w-4" />
+              <ShinyText text="Download Resume" speed={3} className="inline" />
+            </a>
           </Button>
         </div>
       </div>
