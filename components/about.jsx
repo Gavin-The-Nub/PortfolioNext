@@ -93,8 +93,7 @@ export default function About() {
               <ul className="text-muted-foreground space-y-1 text-sm">
                 <li>AI Workflow & Agents</li>
                 <li>AI Automation</li>
-                <li>Web3 Development</li>
-                <li>Ecommerce</li>
+                <li>Blockchain Development</li>
               </ul>
             </div>
           </div>

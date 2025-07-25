@@ -27,6 +27,7 @@ export function LoadingScreen({ isLoading }) {
         <div className="loader text-sm font-extralight">
           <p>loading</p>
           <div className="words">
+            <span className="word"></span>
             <span className="word">crashout</span>
             <span className="word">braincells</span>
             <span className="word">bugs</span>

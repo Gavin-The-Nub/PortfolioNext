@@ -31,8 +31,8 @@ export function PortfolioScene({ onLoaded, onProgress }) {
       />
 
       <SceneLoader onLoaded={onLoaded} onProgress={onProgress} />
-      {!isMobile && <GridPoints />}
-      {!isMobile && <FloatingParticles />}
+      <GridPoints />
+      <FloatingParticles />
       <DataFlowLines />
     </Canvas>
   );
