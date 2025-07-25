@@ -10,9 +10,12 @@ import {
   experimentalProjects,
 } from "@/data/projects";
 import ShinyText from "./ShinyText";
+import Image from "next/image";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("default");
+  const isMobile = useIsMobile();
 
   const categories = [
     { key: "default", label: "Default" },
@@ -79,26 +82,30 @@ export default function Projects() {
 
         {/* Grid of Cards */}
         <motion.div
-          layout
+          layout={!isMobile}
           className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence>
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
+                layout={!isMobile}
+                initial={isMobile ? false : { opacity: 0 }}
+                animate={isMobile ? false : { opacity: 1 }}
+                exit={isMobile ? false : { opacity: 0 }}
+                transition={isMobile ? undefined : { duration: 0.5 }}
               >
                 <Card className="overflow-hidden bg-zinc-100 dark:bg-zinc-900 transition-colors">
                   <CardContent className="p-0">
                     <div className="group relative">
-                      <img
+                      <Image
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
+                        width={400}
+                        height={400}
                         className="w-full transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                       />
                       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 dark:bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                         <h3 className="text-xl font-semibold text-white dark:text-zinc-100 mb-2">
